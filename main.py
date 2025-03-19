@@ -10,6 +10,7 @@ global lan1
 def start (message):
     lan = find_lan(message.chat.id)
     user = find_user(message.chat.id)
+
     if lan == 'ru':
         if user is None:
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -18,6 +19,7 @@ def start (message):
             bot.send_message(message.chat.id, "Добро пожаловать!\nДля продолжение вам необходима поделиться контактом!", reply_markup=markup)
         else:
             pass
+
     elif lan == 'uz':
         if user is None:
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -62,6 +64,8 @@ def contact(message):
         bot.send_message(message.chat.id, "Haydovchi yoki yo'lovchimi?", reply_markup=markup)
     else:
         pass
+
+
 @bot.message_handler(content_types=['text'])
 def text(message):
     lan = find_lan(message.chat.id)
@@ -91,7 +95,6 @@ def text(message):
             bot.send_message(message.chat.id, "Birorini tanlang")
         else:
             pass
-    
 
 if __name__ == '__main__':
     bot.polling(none_stop=True)
