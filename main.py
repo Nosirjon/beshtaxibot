@@ -63,7 +63,6 @@ def contact(message):
         bot.send_message(message.chat.id, "Haydovchi yoki yo'lovchimi?", reply_markup=markup)
     else:
         pass
-
 @bot.message_handler(content_types=['text'])
 def text(message):
     lan = find_lan(message.chat.id)
