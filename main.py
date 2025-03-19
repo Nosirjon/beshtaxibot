@@ -8,7 +8,11 @@ global lan1
 
 @bot.message_handler(commands=['start'])
 def start (message):
+<<<<<<< HEAD
     # проверяем язык
+=======
+
+>>>>>>> d5725ba (2 test commit)
     lan = find_lan(message.chat.id)
     # проверяем пользователя
     user = find_user(message.chat.id)
@@ -35,7 +39,10 @@ def start (message):
         markup.add(item1, item2)
         bot.send_message(message.chat.id, "Assalomu aleykum!\nВыберете язык!  🇷🇺\nTil tanlang!  🇺🇿", reply_markup=markup)
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> d5725ba (2 test commit)
 @bot.callback_query_handler(func=lambda call: True)
 def callback_inline(call):
     if call.data == 'ru':
