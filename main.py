@@ -51,7 +51,6 @@ def callback_inline(call):
         bot.send_message(call.message.chat.id, "Xush kelibsiz!\nDavom etish ucun telefon raqamingizni jonating!", reply_markup=markup)
     else:
         bot.send_message(call.message.chat.id, "Error")
-
 @bot.message_handler(content_types=['contact'])
 def contact(message):
     lan = find_lan(message.chat.id)
