@@ -2,22 +2,22 @@ from telebot import types
 
 TG_TOKEN = '8051183669:AAEcFb0dUc6oxs4HBTe7tuqfzWlqJr2VkYA'
 
-driver_button_ru = [
+driver_menu_button_ru = [
     'Поменять язык',
     'Аккаунт',
 ]
-driver_button_uz = [
+driver_menu_button_uz = [
     'Til almashtrish',
     'Akkaunt',
 ]
 
-passager_button_ru = [
+passager_menu_button_ru = [
     'Поменять язык',
     'Аккаунт',
     '🚖 Заказать такси',
     '📞 Поддержка'
 ]
-passager_button_uz = [
+passager_menu_button_uz = [
     'Til almashtrish',
     'Akkaunt',
     '🚖 Taksi buyurtirish',
