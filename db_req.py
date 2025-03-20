@@ -23,7 +23,7 @@ def create_tables():
     )''')
 
     cursor.execute('''
-       CREATE TABLE IF NOT EXISTS role(
+       CREATE TABLE IF NOT EXISTS roles(
        id INTEGER PRIMARY KEY AUTOINCREMENT,
        chat_id INTEGER,
        role TEXT
@@ -99,13 +99,16 @@ def add_role(chat_id, role):
     cursor.execute('''
     INSERT INTO roles (chat_id, role) VALUES (?, ?)
     ''',(chat_id, role))
+    conn.commit()
+    conn.close()
 
 def find_role(chat_id):
     conn = connect_db()
     cursor = conn.cursor()
     cursor.execute('SELECT role FROM roles WHERE chat_id = ?', (chat_id,))
     result = cursor.fetchone()
-    return result[0] if result else None
+    conn.close()
+    return result
 
 def change_role(chat_id, role):
     conn = connect_db()
